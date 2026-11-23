@@ -1,0 +1,1448 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2566">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="ko"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;1학년 1팀 vs 2팀 대결 미니게임 모음집&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Tailwind CSS --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Google Fonts: Jua &amp; Noto Sans KR --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;link rel="preconnect" href="https://fonts.googleapis.com" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;link href="https://fonts.googleapis.com/css2?family=Jua&amp;family=Noto+Sans+KR:wght@700;900&amp;display=swap" rel="stylesheet" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>* {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-sizing: border-box;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>user-select: none;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>-webkit-user-select: none;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>-webkit-touch-callout: none;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>touch-action: manipulation;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: 'Jua', 'Noto Sans KR', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background-color: #FFFDF7;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>overflow: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>height: 100vh;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 100vw;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>@keyframes popIn {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>0% { transform: scale(0.82); opacity: 0; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>70% { transform: scale(1.05); opacity: 1; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>100% { transform: scale(1); opacity: 1; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>@keyframes shakeWrong {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>0%, 100% { transform: translateX(0); }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>20% { transform: translateX(-8px); }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>40% { transform: translateX(8px); }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>60% { transform: translateX(-5px); }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>80% { transform: translateX(5px); }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>@keyframes floatScore {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>0% { transform: translateY(6px) scale(0.75); opacity: 0; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>25% { transform: translateY(-10px) scale(1.15); opacity: 1; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>80% { transform: translateY(-26px) scale(1); opacity: 1; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>100% { transform: translateY(-40px) scale(0.95); opacity: 0; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.animate-pop {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>animation: popIn 0.28s cubic-bezier(0.22, 1, 0.36, 1) forwards;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.animate-shake {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>animation: shakeWrong 0.35s ease-in-out;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.animate-float-score {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>animation: floatScore 0.85s ease-out forwards;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.touch-btn {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transition: transform 0.06s ease, filter 0.08s ease;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.touch-btn:active {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transform: scale(0.94) translateY(2px);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>filter: brightness(0.95);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body class="flex flex-col h-screen w-screen bg-[#FFFDF7] text-slate-800"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- ==================== 상단 통합 게임 선택 및 점수/타이머 헤더 ==================== --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;header class="relative z-20 flex flex-wrap items-center justify-between gap-2 px-3 sm:px-5 py-2 bg-white border-b-4 border-amber-200 shadow-sm shrink-0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- 1팀 점수 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="relative flex items-center gap-2 bg-blue-600 text-white px-3.5 sm:px-5 py-1.5 rounded-2xl border-b-4 border-blue-800 shadow"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="text-lg sm:text-2xl"&gt;💙 1팀&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="bg-white text-blue-700 px-3 py-0.5 rounded-xl text-2xl sm:text-3xl font-bold"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span id="score-t1"&gt;0&lt;/span&gt;&lt;span class="text-sm sm:text-lg ml-0.5"&gt;점&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div id="popup-t1" class="pointer-events-none absolute -bottom-8 right-2 z-30"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- 중앙: 게임 선택 탭 + 타이머 + 일시정지/설정 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="flex items-center gap-1.5 sm:gap-2 flex-wrap justify-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;nav class="flex items-center gap-1 bg-slate-100 p-1 rounded-2xl border-2 border-slate-200" id="game-tabs"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button type="button" data-game="spot" class="game-tab-btn px-3 sm:px-4 py-1.5 rounded-xl bg-amber-400 text-amber-950 font-bold text-sm sm:text-lg shadow-sm cursor-pointer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>🔍 1. 틀린 그림 찾기</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button type="button" data-game="pattern" class="game-tab-btn px-3 sm:px-4 py-1.5 rounded-xl text-slate-600 hover:bg-white text-sm sm:text-lg cursor-pointer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>🧩 2. 다음 그림 맞히기</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button type="button" data-game="clock" class="game-tab-btn px-3 sm:px-4 py-1.5 rounded-xl text-slate-600 hover:bg-white text-sm sm:text-lg cursor-pointer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>⏰ 3. 몇 시 몇 분?</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/nav&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- 타이머 표시 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div id="timer-box" class="flex items-center gap-1.5 bg-slate-900 text-white px-3.5 sm:px-5 py-1.5 rounded-2xl border-4 border-amber-400 shadow"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span id="timer-label" class="hidden md:inline text-amber-300 text-sm"&gt;⏱ 남은 시간&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span id="timer-display" class="text-xl sm:text-3xl tracking-wider"&gt;02:00&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button id="pause-btn" type="button" class="px-3 py-1.5 rounded-xl bg-amber-100 hover:bg-amber-200 active:scale-95 text-amber-950 border-2 border-amber-400 text-sm sm:text-base font-bold cursor-pointer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>⏸ 멈춤</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/button&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button id="open-setup-btn" type="button" class="px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 active:scale-95 text-slate-700 border-2 border-slate-300 text-sm sm:text-base cursor-pointer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>⚙️ 시간/재시작</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- 2팀 점수 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="relative flex items-center gap-2 bg-rose-600 text-white px-3.5 sm:px-5 py-1.5 rounded-2xl border-b-4 border-rose-800 shadow"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div id="popup-t2" class="pointer-events-none absolute -bottom-8 left-2 z-30"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="bg-white text-rose-700 px-3 py-0.5 rounded-xl text-2xl sm:text-3xl font-bold"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span id="score-t2"&gt;0&lt;/span&gt;&lt;span class="text-sm sm:text-lg ml-0.5"&gt;점&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="text-lg sm:text-2xl"&gt;2팀 ❤️&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/header&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- ==================== 메인 게임 스테이지 ==================== --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;main class="relative flex-1 w-full h-full overflow-hidden"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- ===================================================================== --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- [게임 1] 틀린 그림 찾기 (가운데 기준 그림 / 왼쪽 1팀 / 오른쪽 2팀) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- ===================================================================== --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="stage-spot" class="w-full h-full flex flex-col p-2 sm:p-3 gap-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- 상단 스테이지 진행 바 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="flex items-center justify-between bg-white rounded-2xl px-4 py-1.5 border-2 border-amber-300 shadow-sm shrink-0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span id="spot-theme-title" class="text-base sm:text-xl text-amber-900 font-bold"&gt;🎨 동화 장면 1&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="flex items-center gap-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="text-sm sm:text-lg text-slate-700 font-bold"&gt;함께 찾은 곳&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div id="spot-dots" class="flex items-center gap-1.5"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span id="spot-found-text" class="text-base sm:text-xl font-bold text-emerald-700 ml-1"&gt;0/5&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button id="spot-skip-btn" type="button" class="px-3 py-1 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-300 text-xs sm:text-sm font-bold cursor-pointer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>다음 그림 ⏭</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- 3단 분할: 왼쪽(1팀 터치) | 가운데(원본 그림 - 깨끗하게 유지) | 오른쪽(2팀 터치) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="flex-1 grid grid-cols-3 gap-2 sm:gap-3 min-h-0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- 1팀 그림 영역 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="flex flex-col bg-blue-50/90 rounded-3xl border-4 border-blue-400 p-2 shadow-md min-h-0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="text-center text-blue-800 text-base sm:text-xl font-bold pb-1 shrink-0"&gt;💙 1팀 그림 (여기를 터치!)&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div id="spot-board-t1" class="relative flex-1 bg-white rounded-2xl border-2 border-blue-200 overflow-hidden cursor-pointer"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- 가운데 기준 그림 영역 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="flex flex-col bg-amber-50/90 rounded-3xl border-4 border-amber-400 p-2 shadow-md min-h-0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="text-center text-amber-900 text-base sm:text-xl font-bold pb-1 shrink-0"&gt;⭐ 기준 그림 (비교해요!)&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div id="spot-board-center" class="relative flex-1 bg-white rounded-2xl border-2 border-amber-200 overflow-hidden"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- 2팀 그림 영역 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="flex flex-col bg-rose-50/90 rounded-3xl border-4 border-rose-400 p-2 shadow-md min-h-0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="text-center text-rose-800 text-base sm:text-xl font-bold pb-1 shrink-0"&gt;❤️ 2팀 그림 (여기를 터치!)&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div id="spot-board-t2" class="relative flex-1 bg-white rounded-2xl border-2 border-rose-200 overflow-hidden cursor-pointer"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- ===================================================================== --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- [게임 2] 다음 그림 맞히기 (양 팀 독립 진행 + 규칙 힌트 숨김 + 패스 버튼) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- ===================================================================== --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="stage-pattern" class="hidden w-full h-full grid grid-cols-2 divide-x-4 divide-slate-300"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- 1팀 영역 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="flex flex-col justify-between h-full bg-gradient-to-b from-sky-50 to-blue-100/80 p-3 sm:p-5 overflow-hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="flex items-center justify-between bg-white/90 rounded-2xl px-4 py-2 border-2 border-blue-200 shrink-0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="text-lg sm:text-2xl text-blue-800 font-bold"&gt;💙 1팀 다음 그림 맞히기&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="text-sm sm:text-base text-blue-600 font-bold"&gt;맞히면 +10점!&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- 문제 배열 줄 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="flex-1 flex flex-col items-center justify-center my-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div id="pat-seq-t1" class="w-full flex items-center justify-center gap-1 sm:gap-2 flex-nowrap"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p id="pat-msg-t1" class="mt-3 text-base sm:text-xl text-blue-800 font-bold text-center"&gt;빈칸(□)에 알맞은 그림을 아래에서 고르세요!&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- 보기 4개 + 패스 버튼 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="flex items-stretch gap-2 bg-white/95 p-3 rounded-3xl border-4 border-blue-300 shadow-lg shrink-0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div id="pat-choices-t1" class="flex-1 grid grid-cols-4 gap-2"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button id="pat-pass-t1" type="button" class="touch-btn px-3 sm:px-4 rounded-2xl bg-slate-200 hover:bg-slate-300 border-b-4 border-slate-400 text-slate-800 text-sm sm:text-lg font-bold flex flex-col items-center justify-center shadow cursor-pointer shrink-0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="text-xl sm:text-2xl"&gt;⏭&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span&gt;패스&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- 2팀 영역 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="flex flex-col justify-between h-full bg-gradient-to-b from-rose-50 to-red-100/80 p-3 sm:p-5 overflow-hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="flex items-center justify-between bg-white/90 rounded-2xl px-4 py-2 border-2 border-rose-200 shrink-0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="text-lg sm:text-2xl text-rose-800 font-bold"&gt;❤️ 2팀 다음 그림 맞히기&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="text-sm sm:text-base text-rose-600 font-bold"&gt;맞히면 +10점!&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- 문제 배열 줄 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="flex-1 flex flex-col items-center justify-center my-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div id="pat-seq-t2" class="w-full flex items-center justify-center gap-1 sm:gap-2 flex-nowrap"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p id="pat-msg-t2" class="mt-3 text-base sm:text-xl text-rose-800 font-bold text-center"&gt;빈칸(□)에 알맞은 그림을 아래에서 고르세요!&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- 보기 4개 + 패스 버튼 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="flex items-stretch gap-2 bg-white/95 p-3 rounded-3xl border-4 border-rose-300 shadow-lg shrink-0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div id="pat-choices-t2" class="flex-1 grid grid-cols-4 gap-2"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button id="pat-pass-t2" type="button" class="touch-btn px-3 sm:px-4 rounded-2xl bg-slate-200 hover:bg-slate-300 border-b-4 border-slate-400 text-slate-800 text-sm sm:text-lg font-bold flex flex-col items-center justify-center shadow cursor-pointer shrink-0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="text-xl sm:text-2xl"&gt;⏭&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span&gt;패스&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- ===================================================================== --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- [게임 3] 몇 시 몇 분? (N시 / N시 30분 전용 선착순 대결) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- ===================================================================== --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="stage-clock" class="hidden relative w-full h-full grid grid-cols-2 divide-x-4 divide-slate-300"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- 다음 친구 준비 카운트다운 오버레이 (2 -&gt; 1 -&gt; 시작!) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div id="clock-wait-overlay" class="hidden absolute inset-0 z-30 flex flex-col items-center justify-center bg-slate-900/75 backdrop-blur-sm p-4 text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="clock-winner-banner" class="bg-emerald-500 text-white px-8 py-4 rounded-3xl border-4 border-white shadow-2xl text-3xl sm:text-5xl mb-4 animate-pop"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>⭕ 1팀 정답! +10점!</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="bg-white rounded-3xl border-8 border-amber-400 px-10 py-6 shadow-2xl"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="text-2xl sm:text-3xl text-slate-700 mb-2"&gt;🏃‍♂️ 다음 친구 준비!&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div id="clock-countdown-num" class="text-6xl sm:text-8xl text-amber-500 font-black"&gt;2&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- 1팀 시계 영역 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="flex flex-col justify-between h-full bg-gradient-to-b from-sky-50 to-blue-100/80 p-3 sm:p-5 overflow-hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="flex items-center justify-between bg-white/90 rounded-2xl px-4 py-1.5 border-2 border-blue-200 shrink-0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="text-lg sm:text-2xl text-blue-800 font-bold"&gt;💙 1팀 시계 보기&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="text-sm sm:text-base text-blue-600 font-bold"&gt;먼저 맞히면 +10점!&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="flex-1 flex flex-col items-center justify-center min-h-0 my-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div id="clock-face-t1" class="w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 flex items-center justify-center"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p id="clock-msg-t1" class="mt-2 text-base sm:text-xl text-blue-800 font-bold"&gt;알맞은 시각 버튼을 먼저 누르세요!&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="clock-choices-t1" class="grid grid-cols-2 gap-2.5 sm:gap-3 bg-white/95 p-3 rounded-3xl border-4 border-blue-300 shadow-lg shrink-0"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- 2팀 시계 영역 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="flex flex-col justify-between h-full bg-gradient-to-b from-rose-50 to-red-100/80 p-3 sm:p-5 overflow-hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="flex items-center justify-between bg-white/90 rounded-2xl px-4 py-1.5 border-2 border-rose-200 shrink-0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="text-lg sm:text-2xl text-rose-800 font-bold"&gt;❤️ 2팀 시계 보기&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="text-sm sm:text-base text-rose-600 font-bold"&gt;먼저 맞히면 +10점!&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="flex-1 flex flex-col items-center justify-center min-h-0 my-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div id="clock-face-t2" class="w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 flex items-center justify-center"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p id="clock-msg-t2" class="mt-2 text-base sm:text-xl text-rose-800 font-bold"&gt;알맞은 시각 버튼을 먼저 누르세요!&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="clock-choices-t2" class="grid grid-cols-2 gap-2.5 sm:gap-3 bg-white/95 p-3 rounded-3xl border-4 border-rose-300 shadow-lg shrink-0"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- ==================== 일시정지(멈춤) 오버레이 ==================== --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="pause-overlay" class="hidden fixed inset-0 z-40 flex items-center justify-center bg-slate-900/70 backdrop-blur-sm p-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="max-w-md w-full bg-white rounded-3xl border-8 border-amber-300 p-8 text-center shadow-2xl animate-pop"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="text-6xl mb-3"&gt;⏸&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 class="text-3xl sm:text-4xl text-slate-800 mb-3"&gt;잠깐 멈춤!&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="text-lg text-slate-600 mb-6"&gt;준비가 되면 계속하기 버튼을 눌러 주세요.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button id="resume-btn" type="button" class="w-full py-4 rounded-2xl bg-emerald-500 hover:bg-emerald-600 active:scale-95 text-white text-2xl sm:text-3xl border-b-8 border-emerald-700 shadow-lg cursor-pointer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>▶ 계속하기</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- ==================== 시작 및 제한시간 설정 모달 ==================== --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="setup-overlay" class="fixed inset-0 z-40 flex items-center justify-center bg-slate-900/70 backdrop-blur-sm p-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="max-w-xl w-full bg-white rounded-3xl border-8 border-amber-300 p-6 sm:p-8 text-center shadow-2xl animate-pop"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="inline-block px-4 py-1 rounded-full bg-amber-100 text-amber-900 text-base sm:text-lg mb-2 border-2 border-amber-300"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>🏫 초등학교 1학년 1팀 vs 2팀 동시 대결</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1 class="text-3xl sm:text-5xl text-slate-800 mb-5"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>신나는 교실 대결 게임!</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/h1&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="space-y-4 mb-6 text-left bg-slate-50 p-4 sm:p-5 rounded-2xl border-2 border-slate-200"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;!-- 게임 종목 선택 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;label class="block text-base sm:text-lg text-slate-700 mb-2"&gt;🎮 대결할 게임 선택&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid grid-cols-3 gap-2" id="modal-game-options"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;button type="button" data-game="spot" class="modal-game-btn py-2.5 px-1 rounded-xl border-4 border-amber-500 bg-amber-100 text-amber-950 text-sm sm:text-lg font-bold cursor-pointer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>🔍 틀린 그림 찾기</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;button type="button" data-game="pattern" class="modal-game-btn py-2.5 px-1 rounded-xl border-2 border-slate-300 bg-white text-slate-700 text-sm sm:text-lg cursor-pointer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>🧩 다음 그림 맞히기</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;button type="button" data-game="clock" class="modal-game-btn py-2.5 px-1 rounded-xl border-2 border-slate-300 bg-white text-slate-700 text-sm sm:text-lg cursor-pointer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>⏰ 몇 시 몇 분?</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;!-- 제한 시간 선택 (1분 / 2분 / 3분) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;label class="block text-base sm:text-lg text-slate-700 mb-2"&gt;⏱ 제한 시간 선택&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid grid-cols-3 gap-2" id="modal-time-options"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;button type="button" data-sec="60" class="modal-time-btn py-2.5 rounded-xl border-2 border-slate-300 bg-white text-slate-700 text-lg sm:text-xl cursor-pointer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>1분</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;button type="button" data-sec="120" class="modal-time-btn py-2.5 rounded-xl border-4 border-blue-500 bg-blue-100 text-blue-950 text-lg sm:text-xl font-bold cursor-pointer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>2분 (기본)</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;button type="button" data-sec="180" class="modal-time-btn py-2.5 rounded-xl border-2 border-slate-300 bg-white text-slate-700 text-lg sm:text-xl cursor-pointer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>3분</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button id="start-match-btn" type="button" class="w-full py-4 sm:py-5 rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-500 to-rose-600 hover:brightness-110 active:scale-95 text-white text-2xl sm:text-4xl border-b-8 border-indigo-900 shadow-xl transition cursor-pointer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>🚀 대결 시작하기!</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- ==================== 종료 및 최종 점수 결과 모달 ==================== --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="result-overlay" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-slate-900/75 backdrop-blur-sm p-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="max-w-2xl w-full bg-white rounded-3xl border-8 border-amber-400 p-6 sm:p-10 text-center shadow-2xl animate-pop"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="text-5xl sm:text-6xl mb-2"&gt;🏆&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 id="final-winner-text" class="text-3xl sm:text-5xl text-slate-800 mb-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>1팀 승리! 축하합니다!</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/h2&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="grid grid-cols-2 gap-4 mb-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div id="final-card-t1" class="rounded-3xl bg-blue-50 border-4 border-blue-400 p-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="text-2xl text-blue-800 mb-1"&gt;💙 1팀&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="text-5xl sm:text-6xl text-blue-600 font-bold"&gt;&lt;span id="final-score-t1"&gt;0&lt;/span&gt;점&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div id="final-card-t2" class="rounded-3xl bg-rose-50 border-4 border-rose-400 p-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="text-2xl text-rose-800 mb-1"&gt;❤️ 2팀&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="text-5xl sm:text-6xl text-rose-600 font-bold"&gt;&lt;span id="final-score-t2"&gt;0&lt;/span&gt;점&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="grid grid-cols-2 gap-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button id="replay-same-btn" type="button" class="py-4 rounded-2xl bg-amber-400 hover:bg-amber-500 active:scale-95 text-amber-950 text-xl sm:text-2xl border-b-8 border-amber-600 shadow-lg cursor-pointer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>🔄 같은 게임 다시 하기</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button id="choose-other-btn" type="button" class="py-4 rounded-2xl bg-indigo-600 hover:bg-indigo-700 active:scale-95 text-white text-xl sm:text-2xl border-b-8 border-indigo-900 shadow-lg cursor-pointer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>🎮 다른 게임 고르기</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/main&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>/**</p>
+<p class="p1"><span class="Apple-converted-space">     </span>* 초등학교 1학년 1팀 vs 2팀 동시 대결 미니게임 3종</p>
+<p class="p1"><span class="Apple-converted-space">     </span>* - 상단 탭 전환 시 점수(0점) 및 제한 시간 완전 초기화</p>
+<p class="p1"><span class="Apple-converted-space">     </span>* - 일시정지(⏸ 멈춤) 기능 지원</p>
+<p class="p1"><span class="Apple-converted-space">     </span>* - 재시작/다음 조 진행 시 항상 새로운 랜덤 문제 출제</p>
+<p class="p1"><span class="Apple-converted-space">     </span>*/</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const appState = {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>currentGame: 'spot', // 'spot' | 'pattern' | 'clock'</p>
+<p class="p1"><span class="Apple-converted-space">      </span>durationSec: 120,</p>
+<p class="p1"><span class="Apple-converted-space">      </span>timeLeft: 120,</p>
+<p class="p1"><span class="Apple-converted-space">      </span>isRunning: false,</p>
+<p class="p1"><span class="Apple-converted-space">      </span>isManualPaused: false,</p>
+<p class="p1"><span class="Apple-converted-space">      </span>isTimerPaused: false,</p>
+<p class="p1"><span class="Apple-converted-space">      </span>timerId: null,</p>
+<p class="p1"><span class="Apple-converted-space">      </span>scores: { t1: 0, t2: 0 }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const clockState = {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>hour: 12,</p>
+<p class="p1"><span class="Apple-converted-space">      </span>minute: 30,</p>
+<p class="p1"><span class="Apple-converted-space">      </span>lastKey: '',</p>
+<p class="p1"><span class="Apple-converted-space">      </span>locked: false,</p>
+<p class="p1"><span class="Apple-converted-space">      </span>waitTimer: null</p>
+<p class="p1"><span class="Apple-converted-space">    </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function randInt(min, max) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>return Math.floor(Math.random() * (max - min + 1)) + min;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function shuffle(arr) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const copy = [...arr];</p>
+<p class="p1"><span class="Apple-converted-space">      </span>for (let i = copy.length - 1; i &gt; 0; i--) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const j = Math.floor(Math.random() * (i + 1));</p>
+<p class="p1"><span class="Apple-converted-space">        </span>[copy[i], copy[j]] = [copy[j], copy[i]];</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>return copy;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function resetScores() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>appState.scores = { t1: 0, t2: 0 };</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('score-t1').textContent = '0';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('score-t2').textContent = '0';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function addTeamScore(teamKey, points = 10) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>appState.scores[teamKey] += points;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById(`score-${teamKey}`).textContent = appState.scores[teamKey];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const popupWrap = document.getElementById(`popup-${teamKey}`);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const badge = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>badge.className = 'animate-float-score whitespace-nowrap px-3 py-1 rounded-full bg-amber-400 text-amber-950 font-bold text-lg sm:text-2xl border-2 border-white shadow-lg';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>badge.textContent = `+${points}점!`;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>popupWrap.appendChild(badge);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>setTimeout(() =&gt; badge.remove(), 900);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function formatTime(sec) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const m = Math.floor(sec / 60);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const s = sec % 60;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function updateTimerUI() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const el = document.getElementById('timer-display');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const box = document.getElementById('timer-box');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const label = document.getElementById('timer-label');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>el.textContent = formatTime(appState.timeLeft);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (appState.isManualPaused) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>label.textContent = '⏸ 일시정지';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>box.classList.add('border-amber-300');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>box.classList.remove('border-amber-400', 'border-rose-500', 'border-sky-400');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>} else if (appState.isTimerPaused) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>label.textContent = '⏸ 교대 대기';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>box.classList.add('border-sky-400');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>box.classList.remove('border-amber-400', 'border-rose-500', 'border-amber-300');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>} else if (appState.timeLeft &lt;= 15 &amp;&amp; appState.timeLeft &gt; 0) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>label.textContent = '⏱ 남은 시간';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>el.classList.add('text-rose-400');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>box.classList.add('border-rose-500');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>box.classList.remove('border-amber-400', 'border-sky-400', 'border-amber-300');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>label.textContent = '⏱ 남은 시간';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>el.classList.remove('text-rose-400');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>box.classList.add('border-amber-400');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>box.classList.remove('border-rose-500', 'border-sky-400', 'border-amber-300');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function switchStageView(gameId) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>appState.currentGame = gameId;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>['spot', 'pattern', 'clock'].forEach((id) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const stage = document.getElementById(`stage-${id}`);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (id === gameId) stage.classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>else stage.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.querySelectorAll('.game-tab-btn').forEach((btn) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (btn.dataset.game === gameId) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>btn.className = 'game-tab-btn px-3 sm:px-4 py-1.5 rounded-xl bg-amber-400 text-amber-950 font-bold text-sm sm:text-lg shadow-sm cursor-pointer';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>btn.className = 'game-tab-btn px-3 sm:px-4 py-1.5 rounded-xl text-slate-600 hover:bg-white text-sm sm:text-lg cursor-pointer';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.querySelectorAll('.modal-game-btn').forEach((btn) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (btn.dataset.game === gameId) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>btn.className = 'modal-game-btn py-2.5 px-1 rounded-xl border-4 border-amber-500 bg-amber-100 text-amber-950 text-sm sm:text-lg font-bold cursor-pointer';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>btn.className = 'modal-game-btn py-2.5 px-1 rounded-xl border-2 border-slate-300 bg-white text-slate-700 text-sm sm:text-lg cursor-pointer';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function startMatch() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>clearInterval(appState.timerId);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>clearTimeout(clockState.waitTimer);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>resetScores();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>appState.timeLeft = appState.durationSec;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>appState.isRunning = true;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>appState.isManualPaused = false;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>appState.isTimerPaused = false;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>updateTimerUI();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('setup-overlay').classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('result-overlay').classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('pause-overlay').classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('clock-wait-overlay').classList.add('hidden');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>switchStageView(appState.currentGame);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (appState.currentGame === 'spot') initSpotGame();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>else if (appState.currentGame === 'pattern') initPatternGame();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>else if (appState.currentGame === 'clock') initClockGame();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>appState.timerId = setInterval(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (!appState.isRunning || appState.isManualPaused || appState.isTimerPaused) return;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>appState.timeLeft -= 1;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>updateTimerUI();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (appState.timeLeft &lt;= 0) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>finishMatch();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}, 1000);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function finishMatch() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>clearInterval(appState.timerId);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>clearTimeout(clockState.waitTimer);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>appState.isRunning = false;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>appState.isManualPaused = false;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>appState.isTimerPaused = false;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const s1 = appState.scores.t1;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const s2 = appState.scores.t2;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('final-score-t1').textContent = s1;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('final-score-t2').textContent = s2;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const title = document.getElementById('final-winner-text');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const card1 = document.getElementById('final-card-t1');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const card2 = document.getElementById('final-card-t2');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>card1.classList.remove('ring-8', 'ring-amber-400', 'scale-105');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>card2.classList.remove('ring-8', 'ring-amber-400', 'scale-105');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (s1 &gt; s2) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>title.textContent = '🎉 1팀 승리! 축하합니다!';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>title.className = 'text-3xl sm:text-5xl text-blue-600 mb-6';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>card1.classList.add('ring-8', 'ring-amber-400', 'scale-105');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>} else if (s2 &gt; s1) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>title.textContent = '🎉 2팀 승리! 축하합니다!';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>title.className = 'text-3xl sm:text-5xl text-rose-600 mb-6';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>card2.classList.add('ring-8', 'ring-amber-400', 'scale-105');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>title.textContent = '🤝 우와! 사이좋은 무승부!';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>title.className = 'text-3xl sm:text-5xl text-amber-600 mb-6';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('result-overlay').classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// =========================================================================</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// [게임 1] 틀린 그림 찾기 (25가지 다채로운 동화풍 장면 생성 엔진)</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// =========================================================================</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const SPOT_STAGE_CONFIGS = [</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>title: '🦁 초원의 기린과 사자 친구',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>sky: ['#FEF3C7', '#FDE68A'], ground: '#86EFAC', hill: '#4ADE80',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>props: ['sun_warm', 'acacia_tree', 'giraffe', 'lion_cub', 'waterhole', 'cloud_fluffy', 'grass_tuft'],</p>
+<p class="p1"><span class="Apple-converted-space">        </span>diffs: [</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ x: 58, y: 52, r: 28, orig: 'sun_rays', alt: 'sun_sunglasses' },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ x: 225, y: 120, r: 28, orig: 'giraffe_horns_2', alt: 'giraffe_hat' },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ x: 92, y: 275, r: 30, orig: 'lion_mane_orange', alt: 'lion_bow_blue' },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ x: 205, y: 315, r: 28, orig: 'duck_yellow', alt: 'frog_green' },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ x: 145, y: 185, r: 26, orig: 'bird_red', alt: 'butterfly_purple' }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>]</p>
+<p class="p1"><span class="Apple-converted-space">      </span>},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>title: '🚀 반짝반짝 우주선 여행',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>sky: ['#0F172A', '#1E3A8A'], ground: '#94A3B8', hill: '#CBD5E1',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>props: ['stars_bg', 'saturn_planet', 'moon_crater', 'rocket_ship', 'alien_ufo', 'astronaut'],</p>
+<p class="p1"><span class="Apple-converted-space">        </span>diffs: [</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ x: 150, y: 135, r: 30, orig: 'rocket_window_round', alt: 'rocket_window_heart' },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ x: 150, y: 245, r: 28, orig: 'rocket_flame_orange', alt: 'rocket_flame_blue' },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ x: 65, y: 85, r: 30, orig: 'saturn_ring_gold', alt: 'saturn_ring_pink' },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ x: 242, y: 92, r: 28, orig: 'ufo_dome_green', alt: 'ufo_absent' },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ x: 72, y: 315, r: 30, orig: 'flag_red', alt: 'flag_yellow' }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>]</p>
+<p class="p1"><span class="Apple-converted-space">      </span>},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>title: '🍦 달콤한 아이스크림 트럭',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>sky: ['#E0F2FE', '#BAE6FD'], ground: '#E2E8F0', hill: '#93C5FD',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>props: ['cloud_fluffy', 'icecream_truck', 'awning_stripe', 'giant_cone', 'bench_park', 'balloon_bunch'],</p>
+<p class="p1"><span class="Apple-converted-space">        </span>diffs: [</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ x: 150, y: 95, r: 30, orig: 'cone_scoop_pink', alt: 'cone_scoop_mint' },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ x: 96, y: 278, r: 26, orig: 'wheel_hub_yellow', alt: 'wheel_hub_red' },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ x: 235, y: 145, r: 28, orig: 'balloon_3', alt: 'balloon_2' },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ x: 168, y: 195, r: 28, orig: 'chef_bear', alt: 'chef_cat' },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ x: 52, y: 325, r: 26, orig: 'puppy_brown', alt: 'puppy_white' }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>]</p>
+<p class="p1"><span class="Apple-converted-space">      </span>},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>title: '🐠 산호초 바닷속 왕국',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>sky: ['#CFFAFE', '#67E8F9'], ground: '#FDE68A', hill: '#FCD34D',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>props: ['bubbles_group', 'coral_reef', 'submarine_yellow', 'octopus_pink', 'treasure_chest', 'seaweed_pair'],</p>
+<p class="p1"><span class="Apple-converted-space">        </span>diffs: [</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ x: 150, y: 120, r: 30, orig: 'sub_periscope_right', alt: 'sub_periscope_left' },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ x: 85, y: 240, r: 30, orig: 'octopus_crown', alt: 'octopus_ribbon' },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ x: 222, y: 295, r: 30, orig: 'chest_closed', alt: 'chest_open_gem' },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ x: 235, y: 90, r: 26, orig: 'clownfish', alt: 'blue_tang' },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ x: 148, y: 345, r: 26, orig: 'starfish_orange', alt: 'shell_pearl' }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>]</p>
+<p class="p1"><span class="Apple-converted-space">      </span>},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>title: '🍓 숲속 딸기 케이크 집',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>sky: ['#FCE7F3', '#FBCFE8'], ground: '#BBF7D0', hill: '#86EFAC',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>props: ['cloud_fluffy', 'strawberry_house', 'candy_cane', 'mushroom_red', 'squirrel_cute', 'flower_bed'],</p>
+<p class="p1"><span class="Apple-converted-space">        </span>diffs: [</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ x: 150, y: 118, r: 28, orig: 'roof_cream_swirl', alt: 'roof_cherry_top' },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ x: 150, y: 235, r: 28, orig: 'door_heart', alt: 'door_star' },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ x: 64, y: 285, r: 28, orig: 'mushroom_dots_white', alt: 'mushroom_blue' },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ x: 240, y: 280, r: 28, orig: 'squirrel_acorn', alt: 'bunny_carrot' },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{ x: 225, y: 165, r: 26, orig: 'chimney_smoke', alt: 'chimney_absent' }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>]</p>
+<p class="p1"><span class="Apple-converted-space">      </span>},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>title: '🚂 칙칙폭폭 꼬마 기차 여행',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>sky: ['#DBEAFE', '#EFF6FF'], ground: '#A7F3D0', hill: '#6EE7B7',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>props: ['sun_warm', 'mountain_snow', 'rail_track', 'steam_train', 'crossing_sign', 'sheep_flock'],</p>
+<p class="p1"><span class="Apple-converted-space">        </span>diffs: []</p>
+<p class="p1"><span class="Apple-converted-space">      </span>},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>title: '⛺ 별빛 아래 숲속 캠핑',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>sky: ['#1E1B4B', '#312E81'], ground: '#166534', hill: '#15803D',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>props: ['moon_crescent', 'stars_bg', 'pine_trees', 'camping_tent', 'campfire', 'owl_branch'],</p>
+<p class="p1"><span class="Apple-converted-space">        </span>diffs: []</p>
+<p class="p1"><span class="Apple-converted-space">      </span>},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>title: '🚜 즐거운 동물 농장 아침',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>sky: ['#FEF9C3', '#E0F2FE'], ground: '#BEF264', hill: '#84CC16',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>props: ['sun_warm', 'red_barn', 'windmill', 'tractor_green', 'cow_spotted', 'fence_wood'],</p>
+<p class="p1"><span class="Apple-converted-space">        </span>diffs: []</p>
+<p class="p1"><span class="Apple-converted-space">      </span>},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>title: '🏰 구름 위 무지개 성',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>sky: ['#E0E7FF', '#FCE7F3'], ground: '#FFFFFF', hill: '#F1F5F9',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>props: ['rainbow_arc', 'fairy_castle', 'cloud_fluffy', 'unicorn_white', 'star_wand'],</p>
+<p class="p1"><span class="Apple-converted-space">        </span>diffs: []</p>
+<p class="p1"><span class="Apple-converted-space">      </span>},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>title: '🏖️ 여름 바닷가 모래성 놀이',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>sky: ['#BAE6FD', '#E0F2FE'], ground: '#FDE047', hill: '#38BDF8',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>props: ['sun_warm', 'sailboat', 'beach_umbrella', 'sandcastle', 'crab_red', 'beach_ball'],</p>
+<p class="p1"><span class="Apple-converted-space">        </span>diffs: []</p>
+<p class="p1"><span class="Apple-converted-space">      </span>},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>title: '🦖 공룡 친구들의 화산섬',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>sky: ['#FFEDD5', '#FED7AA'], ground: '#86EFAC', hill: '#22C55E',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>props: ['volcano_bg', 'palm_tree', 'brachio_green', 'tricera_orange', 'dino_egg'],</p>
+<p class="p1"><span class="Apple-converted-space">        </span>diffs: []</p>
+<p class="p1"><span class="Apple-converted-space">      </span>},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>title: '⛄ 눈 내리는 겨울 눈사람 마을',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>sky: ['#CBD5E1', '#E2E8F0'], ground: '#FFFFFF', hill: '#F8FAFC',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>props: ['snowflakes', 'pine_snow', 'snowman_big', 'igloo_ice', 'penguin_cute', 'sled_red'],</p>
+<p class="p1"><span class="Apple-converted-space">        </span>diffs: []</p>
+<p class="p1"><span class="Apple-converted-space">      </span>},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>title: '🎪 신나는 서커스 천막',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>sky: ['#FEF3C7', '#FDE68A'], ground: '#FCA5A5', hill: '#F87171',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>props: ['cloud_fluffy', 'circus_tent', 'elephant_ball', 'seal_balance', 'ticket_booth'],</p>
+<p class="p1"><span class="Apple-converted-space">        </span>diffs: []</p>
+<p class="p1"><span class="Apple-converted-space">      </span>},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>title: '🚒 출동! 멋진 소방차',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>sky: ['#E0F2FE', '#BAE6FD'], ground: '#94A3B8', hill: '#CBD5E1',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>props: ['cloud_fluffy', 'city_buildings', 'fire_truck', 'fire_hydrant', 'dalmatian_dog'],</p>
+<p class="p1"><span class="Apple-converted-space">        </span>diffs: []</p>
+<p class="p1"><span class="Apple-converted-space">      </span>},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>title: '🏴‍☠️ 보물섬 해적선 모험',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>sky: ['#BAE6FD', '#7DD3FC'], ground: '#FDE047', hill: '#0284C7',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>props: ['sun_warm', 'pirate_ship', 'island_palm', 'parrot_red', 'treasure_map'],</p>
+<p class="p1"><span class="Apple-converted-space">        </span>diffs: []</p>
+<p class="p1"><span class="Apple-converted-space">      </span>},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>title: '🏫 즐거운 1학년 우리 교실',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>sky: ['#FEF9C3', '#FEF3C7'], ground: '#FDBA74', hill: '#FB923C',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>props: ['classroom_board', 'wall_clock', 'teacher_desk', 'globe_earth', 'school_bag'],</p>
+<p class="p1"><span class="Apple-converted-space">        </span>diffs: []</p>
+<p class="p1"><span class="Apple-converted-space">      </span>},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>title: '🎈 하늘을 나는 열기구 축제',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>sky: ['#DBEAFE', '#E0E7FF'], ground: '#86EFAC', hill: '#4ADE80',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>props: ['cloud_fluffy', 'hot_air_balloon_main', 'hot_air_balloon_small', 'bird_flock', 'windmill_small'],</p>
+<p class="p1"><span class="Apple-converted-space">        </span>diffs: []</p>
+<p class="p1"><span class="Apple-converted-space">      </span>},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>title: '🎂 생일 축하 동물 친구들',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>sky: ['#FCE7F3', '#FAE8FF'], ground: '#FDE68A', hill: '#FCD34D',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>props: ['party_banner', 'birthday_table', 'cake_3tier', 'bear_party', 'gift_pile'],</p>
+<p class="p1"><span class="Apple-converted-space">        </span>diffs: []</p>
+<p class="p1"><span class="Apple-converted-space">      </span>},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>title: '🤖 똑똑한 로봇 연구소',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>sky: ['#E2E8F0', '#CBD5E1'], ground: '#64748B', hill: '#475569',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>props: ['lab_screen', 'robot_friend', 'gear_wheels', 'battery_pack', 'mini_drone'],</p>
+<p class="p1"><span class="Apple-converted-space">        </span>diffs: []</p>
+<p class="p1"><span class="Apple-converted-space">      </span>},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>title: '🍂 다람쥐의 도토리 가을 숲',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>sky: ['#FEF3C7', '#FFEDD5'], ground: '#F59E0B', hill: '#D97706',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>props: ['autumn_tree', 'falling_leaves', 'hedgehog_cute', 'acorn_basket', 'log_bridge'],</p>
+<p class="p1"><span class="Apple-converted-space">        </span>diffs: []</p>
+<p class="p1"><span class="Apple-converted-space">      </span>},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>title: '🌊 신기한 해저 잠수함 탐험',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>sky: ['#0284C7', '#0369A1'], ground: '#FACC15', hill: '#EAB308',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>props: ['whale_blue', 'jellyfish_glow', 'coral_pink', 'anchor_iron', 'pearl_clam'],</p>
+<p class="p1"><span class="Apple-converted-space">        </span>diffs: []</p>
+<p class="p1"><span class="Apple-converted-space">      </span>},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>title: '🧁 알록달록 빵집 쇼윈도',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>sky: ['#FEF3C7', '#FDE68A'], ground: '#FDBA74', hill: '#FB923C',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>props: ['bakery_awning', 'bread_shelf', 'cupcake_stand', 'croissant_tray', 'baker_bear'],</p>
+<p class="p1"><span class="Apple-converted-space">        </span>diffs: []</p>
+<p class="p1"><span class="Apple-converted-space">      </span>},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>title: '🌻 햇살 가득 꽃밭 나비 정원',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>sky: ['#E0F2FE', '#DCFCE7'], ground: '#86EFAC', hill: '#4ADE80',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>props: ['sun_warm', 'watering_can', 'sunflower_tall', 'ladybug_leaf', 'snail_shell'],</p>
+<p class="p1"><span class="Apple-converted-space">        </span>diffs: []</p>
+<p class="p1"><span class="Apple-converted-space">      </span>},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>title: '⛵ 바람 씽씽 요트 항구',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>sky: ['#BAE6FD', '#E0F2FE'], ground: '#38BDF8', hill: '#0284C7',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>props: ['lighthouse', 'seagulls', 'yacht_white', 'pier_wood', 'pelican_bird'],</p>
+<p class="p1"><span class="Apple-converted-space">        </span>diffs: []</p>
+<p class="p1"><span class="Apple-converted-space">      </span>},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>title: '🐼 대나무 숲속 판다 놀이터',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>sky: ['#DCFCE7', '#ECFCCB'], ground: '#A3E635', hill: '#65A30D',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>props: ['bamboo_stalks', 'panda_swing', 'red_panda', 'lantern_paper', 'stone_path'],</p>
+<p class="p1"><span class="Apple-converted-space">        </span>diffs: []</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function renderSpotPart(partName) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const parts = {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>sun_warm: `&lt;g&gt;&lt;circle cx="58" cy="52" r="24" fill="#FDE047" stroke="#F59E0B" stroke-width="3"/&gt;&lt;circle cx="58" cy="52" r="18" fill="#FACC15"/&gt;&lt;/g&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>sun_rays: `&lt;g stroke="#F59E0B" stroke-width="4" stroke-linecap="round"&gt;&lt;line x1="58" y1="18" x2="58" y2="10"/&gt;&lt;line x1="58" y1="86" x2="58" y2="94"/&gt;&lt;line x1="24" y1="52" x2="16" y2="52"/&gt;&lt;line x1="92" y1="52" x2="100" y2="52"/&gt;&lt;line x1="34" y1="28" x2="28" y2="22"/&gt;&lt;line x1="82" y1="76" x2="88" y2="82"/&gt;&lt;/g&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>sun_sunglasses: `&lt;g&gt;&lt;rect x="42" y="45" width="13" height="9" rx="2" fill="#1E293B"/&gt;&lt;rect x="61" y="45" width="13" height="9" rx="2" fill="#1E293B"/&gt;&lt;line x1="55" y1="48" x2="61" y2="48" stroke="#1E293B" stroke-width="2.5"/&gt;&lt;path d="M50 61 Q58 67 66 61" fill="none" stroke="#92400E" stroke-width="2.5" stroke-linecap="round"/&gt;&lt;/g&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>cloud_fluffy: `&lt;g fill="#FFFFFF" opacity="0.92"&gt;&lt;circle cx="195" cy="48" r="15"/&gt;&lt;circle cx="215" cy="42" r="20"/&gt;&lt;circle cx="238" cy="46" r="16"/&gt;&lt;rect x="195" y="46" width="43" height="16" rx="8"/&gt;&lt;/g&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>grass_tuft: `&lt;g stroke="#15803D" stroke-width="3.5" stroke-linecap="round" fill="none"&gt;&lt;path d="M28 365 L22 350 M28 365 L28 346 M28 365 L35 351"/&gt;&lt;path d="M262 358 L256 344 M262 358 L263 340 M262 358 L269 345"/&gt;&lt;/g&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>acacia_tree: `&lt;g&gt;&lt;rect x="38" y="165" width="16" height="95" rx="5" fill="#92400E"/&gt;&lt;ellipse cx="46" cy="152" rx="42" ry="18" fill="#16A34A"/&gt;&lt;ellipse cx="46" cy="144" rx="30" ry="12" fill="#22C55E"/&gt;&lt;/g&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>giraffe: `&lt;g&gt;&lt;rect x="208" y="135" width="16" height="115" rx="8" fill="#FBBF24" stroke="#D97706" stroke-width="2.5"/&gt;&lt;ellipse cx="222" cy="240" rx="28" ry="18" fill="#FBBF24" stroke="#D97706" stroke-width="2.5"/&gt;&lt;rect x="202" y="252" width="8" height="35" rx="3" fill="#D97706"/&gt;&lt;rect x="232" y="252" width="8" height="35" rx="3" fill="#D97706"/&gt;&lt;circle cx="215" cy="175" r="5" fill="#B45309"/&gt;&lt;circle cx="217" cy="202" r="6" fill="#B45309"/&gt;&lt;ellipse cx="222" cy="130" rx="18" ry="13" fill="#FDE047" stroke="#D97706" stroke-width="2.5"/&gt;&lt;circle cx="228" cy="128" r="3" fill="#1E293B"/&gt;&lt;/g&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>giraffe_horns_2: `&lt;g stroke="#92400E" stroke-width="3" stroke-linecap="round"&gt;&lt;line x1="215" y1="118" x2="212" y2="106"/&gt;&lt;circle cx="212" cy="105" r="3" fill="#92400E"/&gt;&lt;line x1="225" y1="118" x2="228" y2="106"/&gt;&lt;circle cx="228" cy="105" r="3" fill="#92400E"/&gt;&lt;/g&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>giraffe_hat: `&lt;g&gt;&lt;polygon points="208,118 222,94 236,118" fill="#EF4444" stroke="#B91C1C" stroke-width="2"/&gt;&lt;circle cx="222" cy="93" r="4" fill="#FACC15"/&gt;&lt;/g&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>lion_cub: `&lt;g&gt;&lt;circle cx="92" cy="272" r="24" fill="#EA580C"/&gt;&lt;circle cx="92" cy="272" r="16" fill="#FDBA74"/&gt;&lt;circle cx="86" cy="269" r="2.5" fill="#1E293B"/&gt;&lt;circle cx="98" cy="269" r="2.5" fill="#1E293B"/&gt;&lt;polygon points="89,275 95,275 92,279" fill="#7C2D12"/&gt;&lt;/g&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>lion_mane_orange: `&lt;circle cx="92" cy="291" r="6" fill="#FACC15"/&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>lion_bow_blue: `&lt;g fill="#2563EB"&gt;&lt;polygon points="82,291 92,286 92,296"/&gt;&lt;polygon points="102,291 92,286 92,296"/&gt;&lt;circle cx="92" cy="291" r="3" fill="#93C5FD"/&gt;&lt;/g&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>waterhole: `&lt;ellipse cx="205" cy="322" rx="48" ry="20" fill="#38BDF8" stroke="#0284C7" stroke-width="3"/&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>duck_yellow: `&lt;g&gt;&lt;ellipse cx="205" cy="318" rx="12" ry="8" fill="#FACC15"/&gt;&lt;circle cx="213" cy="310" r="6" fill="#FACC15"/&gt;&lt;polygon points="218,310 225,312 218,314" fill="#F97316"/&gt;&lt;/g&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>frog_green: `&lt;g&gt;&lt;ellipse cx="205" cy="318" rx="13" ry="9" fill="#22C55E"/&gt;&lt;circle cx="199" cy="309" r="4" fill="#22C55E"/&gt;&lt;circle cx="211" cy="309" r="4" fill="#22C55E"/&gt;&lt;circle cx="199" cy="309" r="1.5" fill="#000"/&gt;&lt;circle cx="211" cy="309" r="1.5" fill="#000"/&gt;&lt;/g&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>bird_red: `&lt;g&gt;&lt;ellipse cx="145" cy="185" rx="11" ry="8" fill="#EF4444"/&gt;&lt;polygon points="155,185 163,183 155,188" fill="#FACC15"/&gt;&lt;/g&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>butterfly_purple: `&lt;g&gt;&lt;ellipse cx="139" cy="185" rx="8" ry="11" fill="#A855F7"/&gt;&lt;ellipse cx="151" cy="185" rx="8" ry="11" fill="#C084FC"/&gt;&lt;rect x="143" y="177" width="4" height="16" rx="2" fill="#4C1D95"/&gt;&lt;/g&gt;`,</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>stars_bg: `&lt;g fill="#FEF08A"&gt;&lt;circle cx="35" cy="35" r="2.5"/&gt;&lt;circle cx="115" cy="28" r="2"/&gt;&lt;circle cx="200" cy="38" r="3"/&gt;&lt;circle cx="275" cy="55" r="2.5"/&gt;&lt;circle cx="42" cy="165" r="2"/&gt;&lt;circle cx="268" cy="185" r="2.5"/&gt;&lt;/g&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>saturn_planet: `&lt;circle cx="65" cy="85" r="18" fill="#FB923C"/&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>saturn_ring_gold: `&lt;ellipse cx="65" cy="85" rx="30" ry="7" fill="none" stroke="#FDE047" stroke-width="4" transform="rotate(-18 65 85)"/&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>saturn_ring_pink: `&lt;ellipse cx="65" cy="85" rx="30" ry="7" fill="none" stroke="#F472B6" stroke-width="4" transform="rotate(-18 65 85)"/&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>moon_crater: `&lt;g fill="#64748B" opacity="0.45"&gt;&lt;circle cx="145" cy="330" r="14"/&gt;&lt;circle cx="220" cy="345" r="18"/&gt;&lt;circle cx="85" cy="355" r="11"/&gt;&lt;/g&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>rocket_ship: `&lt;g&gt;&lt;polygon points="150,62 122,115 178,115" fill="#EF4444"/&gt;&lt;rect x="122" y="115" width="56" height="95" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="3"/&gt;&lt;polygon points="122,175 100,215 122,205" fill="#EF4444"/&gt;&lt;polygon points="178,175 200,215 178,205" fill="#EF4444"/&gt;&lt;/g&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>rocket_window_round: `&lt;circle cx="150" cy="142" r="15" fill="#38BDF8" stroke="#0284C7" stroke-width="4"/&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>rocket_window_heart: `&lt;path d="M150 154 C132 140 132 124 150 134 C168 124 168 140 150 154 Z" fill="#F43F5E" stroke="#BE123C" stroke-width="2"/&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>rocket_flame_orange: `&lt;path d="M134 212 Q150 262 166 212 Z" fill="#F97316"/&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>rocket_flame_blue: `&lt;path d="M134 212 Q150 262 166 212 Z" fill="#38BDF8"/&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>alien_ufo: `&lt;g&gt;&lt;ellipse cx="242" cy="100" rx="26" ry="9" fill="#94A3B8"/&gt;&lt;circle cx="230" cy="100" r="2.5" fill="#FACC15"/&gt;&lt;circle cx="242" cy="100" r="2.5" fill="#FACC15"/&gt;&lt;circle cx="254" cy="100" r="2.5" fill="#FACC15"/&gt;&lt;/g&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>ufo_dome_green: `&lt;path d="M228 96 Q242 74 256 96 Z" fill="#4ADE80" opacity="0.85"/&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>ufo_absent: ``,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>astronaut: `&lt;g&gt;&lt;circle cx="185" cy="292" r="15" fill="#FFFFFF" stroke="#94A3B8" stroke-width="3"/&gt;&lt;rect x="176" y="286" width="18" height="10" rx="4" fill="#38BDF8"/&gt;&lt;rect x="173" y="307" width="24" height="26" rx="6" fill="#FFFFFF" stroke="#94A3B8" stroke-width="3"/&gt;&lt;/g&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>flag_red: `&lt;g&gt;&lt;line x1="65" y1="340" x2="65" y2="295" stroke="#FFFFFF" stroke-width="3"/&gt;&lt;polygon points="65,295 95,305 65,315" fill="#EF4444"/&gt;&lt;/g&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>flag_yellow: `&lt;g&gt;&lt;line x1="65" y1="340" x2="65" y2="295" stroke="#FFFFFF" stroke-width="3"/&gt;&lt;polygon points="65,295 95,305 65,315" fill="#FACC15"/&gt;&lt;/g&gt;`,</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>icecream_truck: `&lt;g&gt;&lt;rect x="65" y="165" width="170" height="105" rx="16" fill="#FFFFFF" stroke="#F472B6" stroke-width="4"/&gt;&lt;rect x="65" y="225" width="170" height="45" rx="10" fill="#FBCFE8"/&gt;&lt;rect x="125" y="178" width="85" height="45" rx="6" fill="#E0F2FE" stroke="#0284C7" stroke-width="2.5"/&gt;&lt;circle cx="96" cy="278" r="20" fill="#1E293B"/&gt;&lt;circle cx="204" cy="278" r="20" fill="#1E293B"/&gt;&lt;circle cx="204" cy="278" r="8" fill="#FACC15"/&gt;&lt;/g&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>awning_stripe: `&lt;g&gt;&lt;path d="M120 178 L215 178 L220 192 L115 192 Z" fill="#F43F5E"/&gt;&lt;/g&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>giant_cone: `&lt;g&gt;&lt;polygon points="136,112 164,112 150,164" fill="#D97706" stroke="#92400E" stroke-width="2.5"/&gt;&lt;/g&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>cone_scoop_pink: `&lt;circle cx="150" cy="100" r="18" fill="#F472B6" stroke="#DB2777" stroke-width="2.5"/&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>cone_scoop_mint: `&lt;circle cx="150" cy="100" r="18" fill="#34D399" stroke="#059669" stroke-width="2.5"/&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>wheel_hub_yellow: `&lt;circle cx="96" cy="278" r="8" fill="#FACC15"/&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>wheel_hub_red: `&lt;circle cx="96" cy="278" r="8" fill="#EF4444"/&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>balloon_bunch: `&lt;g stroke="#64748B" stroke-width="2"&gt;&lt;line x1="235" y1="185" x2="225" y2="145"/&gt;&lt;line x1="235" y1="185" x2="245" y2="142"/&gt;&lt;/g&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>balloon_3: `&lt;g&gt;&lt;circle cx="225" cy="140" r="11" fill="#EF4444"/&gt;&lt;circle cx="245" cy="138" r="11" fill="#3B82F6"/&gt;&lt;circle cx="235" cy="126" r="11" fill="#FACC15"/&gt;&lt;/g&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>balloon_2: `&lt;g&gt;&lt;circle cx="225" cy="140" r="11" fill="#EF4444"/&gt;&lt;circle cx="245" cy="138" r="11" fill="#3B82F6"/&gt;&lt;/g&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>chef_bear: `&lt;g&gt;&lt;circle cx="168" cy="206" r="13" fill="#B45309"/&gt;&lt;circle cx="158" cy="195" r="5" fill="#B45309"/&gt;&lt;circle cx="178" cy="195" r="5" fill="#B45309"/&gt;&lt;circle cx="164" cy="205" r="2" fill="#000"/&gt;&lt;circle cx="172" cy="205" r="2" fill="#000"/&gt;&lt;/g&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>chef_cat: `&lt;g&gt;&lt;circle cx="168" cy="206" r="13" fill="#F8FAFC" stroke="#94A3B8" stroke-width="2"/&gt;&lt;polygon points="156,198 160,186 166,195" fill="#F8FAFC" stroke="#94A3B8" stroke-width="2"/&gt;&lt;polygon points="180,198 176,186 170,195" fill="#F8FAFC" stroke="#94A3B8" stroke-width="2"/&gt;&lt;circle cx="164" cy="205" r="2" fill="#000"/&gt;&lt;circle cx="172" cy="205" r="2" fill="#000"/&gt;&lt;/g&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>bench_park: ``,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>puppy_brown: `&lt;g&gt;&lt;ellipse cx="52" cy="332" rx="14" ry="10" fill="#B45309"/&gt;&lt;circle cx="44" cy="320" r="9" fill="#B45309"/&gt;&lt;circle cx="41" cy="318" r="2" fill="#000"/&gt;&lt;/g&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>puppy_white: `&lt;g&gt;&lt;ellipse cx="52" cy="332" rx="14" ry="10" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2"/&gt;&lt;circle cx="44" cy="320" r="9" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2"/&gt;&lt;circle cx="41" cy="318" r="2" fill="#000"/&gt;&lt;/g&gt;`,</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>bubbles_group: `&lt;g fill="none" stroke="#FFFFFF" stroke-width="2.5" opacity="0.8"&gt;&lt;circle cx="42" cy="65" r="8"/&gt;&lt;circle cx="55" cy="45" r="5"/&gt;&lt;circle cx="265" cy="145" r="7"/&gt;&lt;/g&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>coral_reef: `&lt;path d="M25 335 Q15 290 35 265 M35 335 Q50 295 42 270" stroke="#F43F5E" stroke-width="9" stroke-linecap="round" fill="none"/&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>seaweed_pair: `&lt;path d="M275 340 Q260 295 278 255 Q292 220 272 190" stroke="#16A34A" stroke-width="10" stroke-linecap="round" fill="none"/&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>submarine_yellow: `&lt;g&gt;&lt;ellipse cx="150" cy="122" rx="64" ry="34" fill="#FACC15" stroke="#CA8A04" stroke-width="3.5"/&gt;&lt;rect x="132" y="74" width="32" height="20" rx="6" fill="#FACC15" stroke="#CA8A04" stroke-width="3"/&gt;&lt;circle cx="122" cy="122" r="11" fill="#E0F2FE" stroke="#0369A1" stroke-width="3"/&gt;&lt;circle cx="152" cy="122" r="11" fill="#E0F2FE" stroke="#0369A1" stroke-width="3"/&gt;&lt;circle cx="182" cy="122" r="11" fill="#E0F2FE" stroke="#0369A1" stroke-width="3"/&gt;&lt;/g&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>sub_periscope_right: `&lt;path d="M148 74 L148 54 L164 54" fill="none" stroke="#CA8A04" stroke-width="5" stroke-linecap="round"/&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>sub_periscope_left: `&lt;path d="M148 74 L148 54 L132 54" fill="none" stroke="#CA8A04" stroke-width="5" stroke-linecap="round"/&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>octopus_pink: `&lt;g&gt;&lt;circle cx="85" cy="242" r="22" fill="#F472B6"/&gt;&lt;path d="M68 258 Q60 276 72 278 M80 262 Q78 280 86 280 M92 262 Q94 280 102 278 M102 258 Q112 274 104 278" stroke="#F472B6" stroke-width="6" stroke-linecap="round" fill="none"/&gt;&lt;circle cx="78" cy="240" r="3" fill="#1E293B"/&gt;&lt;circle cx="92" cy="240" r="3" fill="#1E293B"/&gt;&lt;/g&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>octopus_crown: `&lt;polygon points="73,221 78,209 85,218 92,209 97,221" fill="#FACC15" stroke="#CA8A04" stroke-width="2"/&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>octopus_ribbon: `&lt;g fill="#38BDF8"&gt;&lt;polygon points="72,219 85,213 85,225"/&gt;&lt;polygon points="98,219 85,213 85,225"/&gt;&lt;/g&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>treasure_chest: `&lt;rect x="196" y="292" width="52" height="34" rx="5" fill="#B45309" stroke="#78350F" stroke-width="3"/&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>chest_closed: `&lt;path d="M196 292 Q222 274 248 292 Z" fill="#D97706" stroke="#78350F" stroke-width="3"/&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>chest_open_gem: `&lt;g&gt;&lt;path d="M196 284 Q222 264 248 284 Z" fill="#D97706" stroke="#78350F" stroke-width="3"/&gt;&lt;polygon points="222,276 232,286 222,296 212,286" fill="#38BDF8"/&gt;&lt;/g&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>clownfish: `&lt;g&gt;&lt;ellipse cx="235" cy="90" rx="18" ry="11" fill="#F97316"/&gt;&lt;polygon points="253,90 265,80 265,100" fill="#F97316"/&gt;&lt;rect x="231" y="79" width="5" height="22" fill="#FFFFFF"/&gt;&lt;/g&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>blue_tang: `&lt;g&gt;&lt;ellipse cx="235" cy="90" rx="18" ry="11" fill="#2563EB"/&gt;&lt;polygon points="253,90 265,80 265,100" fill="#FACC15"/&gt;&lt;/g&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>starfish_orange: `&lt;polygon points="148,325 153,339 168,339 156,348 160,362 148,353 136,362 140,348 128,339 143,339" fill="#FB923C" stroke="#EA580C" stroke-width="2"/&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>shell_pearl: `&lt;g&gt;&lt;path d="M130 352 Q148 326 166 352 Z" fill="#FBCFE8" stroke="#DB2777" stroke-width="2.5"/&gt;&lt;circle cx="148" cy="346" r="6" fill="#FFFFFF"/&gt;&lt;/g&gt;`,</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>strawberry_house: `&lt;g&gt;&lt;rect x="92" y="162" width="116" height="118" rx="14" fill="#FFF1F2" stroke="#FB7185" stroke-width="4"/&gt;&lt;path d="M78 165 Q150 82 222 165 Z" fill="#F43F5E" stroke="#BE123C" stroke-width="3"/&gt;&lt;rect x="132" y="215" width="36" height="65" rx="8" fill="#FDBA74" stroke="#C2410C" stroke-width="3"/&gt;&lt;/g&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>roof_cream_swirl: `&lt;path d="M126 118 Q150 96 174 118 Q150 132 126 118 Z" fill="#FFFFFF"/&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>roof_cherry_top: `&lt;circle cx="150" cy="108" r="11" fill="#BE123C"/&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>door_heart: `&lt;path d="M150 245 C138 235 138 225 150 232 C162 225 162 235 150 245 Z" fill="#F43F5E"/&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>door_star: `&lt;polygon points="150,224 154,233 163,233 156,239 158,247 150,242 142,247 144,239 137,233 146,233" fill="#FACC15"/&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>mushroom_red: `&lt;g&gt;&lt;rect x="56" y="292" width="16" height="22" rx="4" fill="#FEF3C7"/&gt;&lt;path d="M40 294 Q64 260 88 294 Z" fill="#EF4444"/&gt;&lt;/g&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>mushroom_dots_white: `&lt;g fill="#FFFFFF"&gt;&lt;circle cx="54" cy="283" r="4"/&gt;&lt;circle cx="72" cy="283" r="4"/&gt;&lt;/g&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>mushroom_blue: `&lt;path d="M40 294 Q64 260 88 294 Z" fill="#3B82F6"/&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>squirrel_cute: ``,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>squirrel_acorn: `&lt;g&gt;&lt;circle cx="240" cy="282" r="14" fill="#D97706"/&gt;&lt;circle cx="235" cy="278" r="2" fill="#000"/&gt;&lt;ellipse cx="250" cy="286" rx="8" ry="11" fill="#B45309"/&gt;&lt;/g&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>bunny_carrot: `&lt;g&gt;&lt;circle cx="240" cy="282" r="14" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2"/&gt;&lt;ellipse cx="235" cy="264" rx="4" ry="11" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2"/&gt;&lt;ellipse cx="245" cy="264" rx="4" ry="11" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2"/&gt;&lt;/g&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>chimney_smoke: `&lt;g&gt;&lt;rect x="195" y="122" width="16" height="28" fill="#B45309"/&gt;&lt;circle cx="203" cy="108" r="7" fill="#FFFFFF" opacity="0.85"/&gt;&lt;/g&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>chimney_absent: ``,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>candy_cane: ``,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>flower_bed: ``</p>
+<p class="p1"><span class="Apple-converted-space">      </span>};</p>
+<p class="p1"><span class="Apple-converted-space">      </span>return parts[partName] || '';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function buildRichScene(index) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const cfg = SPOT_STAGE_CONFIGS[index % SPOT_STAGE_CONFIGS.length];</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const basePropsSvg = cfg.props.map((p) =&gt; renderSpotPart(p)).join('');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (index &gt;= 5) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>return buildProceduralStoryScene(index, cfg);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const bgSvg = `</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;defs&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;linearGradient id="skyGrad_${index}" x1="0" y1="0" x2="0" y2="1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;stop offset="0%" stop-color="${cfg.sky[0]}"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;stop offset="100%" stop-color="${cfg.sky[1]}"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/linearGradient&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/defs&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;rect x="0" y="0" width="300" height="400" fill="url(#skyGrad_${index})"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;path d="M0 265 Q150 225 300 265 L300 400 L0 400 Z" fill="${cfg.hill}"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;rect x="0" y="295" width="300" height="105" fill="${cfg.ground}"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>${basePropsSvg}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>`;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const diffs = cfg.diffs.map((d, idx) =&gt; ({</p>
+<p class="p1"><span class="Apple-converted-space">        </span>id: idx,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>x: d.x,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>y: d.y,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>r: d.r,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>orig: renderSpotPart(d.orig),</p>
+<p class="p1"><span class="Apple-converted-space">        </span>alt: renderSpotPart(d.alt)</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}));</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>return { title: cfg.title, baseSvg: bgSvg, diffs };</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function buildProceduralStoryScene(index, cfg) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const themesPalette = [</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ main: '#EF4444', sub: '#FACC15', accent: '#38BDF8', roof: '#B91C1C' },</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ main: '#3B82F6', sub: '#F472B6', accent: '#34D399', roof: '#1D4ED8' },</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ main: '#F97316', sub: '#A855F7', accent: '#FDE047', roof: '#C2410C' },</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ main: '#10B981', sub: '#FB7185', accent: '#60A5FA', roof: '#047857' },</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ main: '#8B5CF6', sub: '#FBBF24', accent: '#F472B6', roof: '#6D28D9' }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>];</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const pal = themesPalette[index % themesPalette.length];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const baseSvg = `</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;defs&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;linearGradient id="pSky_${index}" x1="0" y1="0" x2="0" y2="1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;stop offset="0%" stop-color="${cfg.sky[0]}"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;stop offset="100%" stop-color="${cfg.sky[1]}"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/linearGradient&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/defs&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;rect x="0" y="0" width="300" height="400" fill="url(#pSky_${index})"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;circle cx="54" cy="52" r="22" fill="#FDE047" stroke="#F59E0B" stroke-width="3"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;g fill="#FFFFFF" opacity="0.9"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;circle cx="210" cy="48" r="14"/&gt;&lt;circle cx="228" cy="44" r="18"/&gt;&lt;circle cx="246" cy="48" r="14"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/g&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;path d="M0 255 Q95 215 190 250 T300 245 L300 400 L0 400 Z" fill="${cfg.hill}"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;rect x="0" y="288" width="300" height="112" fill="${cfg.ground}"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;rect x="85" y="168" width="130" height="115" rx="14" fill="#FFFBEB" stroke="${pal.main}" stroke-width="4"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;polygon points="72,172 150,108 228,172" fill="${pal.roof}" stroke="#78350F" stroke-width="3"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;rect x="132" y="222" width="36" height="61" rx="6" fill="${pal.sub}" stroke="#78350F" stroke-width="3"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;rect x="34" y="215" width="14" height="72" rx="4" fill="#92400E"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;circle cx="41" cy="198" r="30" fill="#16A34A"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;circle cx="41" cy="190" r="20" fill="#22C55E"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;rect x="252" y="220" width="14" height="68" rx="4" fill="#92400E"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;circle cx="259" cy="202" r="28" fill="#15803D"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>`;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const diffs = [</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{</p>
+<p class="p1"><span class="Apple-converted-space">          </span>id: 0, x: 150, y: 146, r: 26,</p>
+<p class="p1"><span class="Apple-converted-space">          </span>orig: `&lt;circle cx="150" cy="146" r="14" fill="${pal.accent}" stroke="#1E293B" stroke-width="3"/&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">          </span>alt: `&lt;polygon points="150,131 155,142 167,142 157,149 161,160 150,153 139,160 143,149 133,142 145,142" fill="#FACC15" stroke="#B45309" stroke-width="2"/&gt;`</p>
+<p class="p1"><span class="Apple-converted-space">        </span>},</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{</p>
+<p class="p1"><span class="Apple-converted-space">          </span>id: 1, x: 108, y: 202, r: 24,</p>
+<p class="p1"><span class="Apple-converted-space">          </span>orig: `&lt;rect x="96" y="190" width="24" height="24" rx="4" fill="#BAE6FD" stroke="#0284C7" stroke-width="2.5"/&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">          </span>alt: `&lt;rect x="96" y="190" width="24" height="24" rx="4" fill="#FBCFE8" stroke="#DB2777" stroke-width="2.5"/&gt;`</p>
+<p class="p1"><span class="Apple-converted-space">        </span>},</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{</p>
+<p class="p1"><span class="Apple-converted-space">          </span>id: 2, x: 192, y: 202, r: 24,</p>
+<p class="p1"><span class="Apple-converted-space">          </span>orig: `&lt;circle cx="192" cy="202" r="12" fill="#FEF08A" stroke="#CA8A04" stroke-width="2.5"/&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">          </span>alt: ``</p>
+<p class="p1"><span class="Apple-converted-space">        </span>},</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{</p>
+<p class="p1"><span class="Apple-converted-space">          </span>id: 3, x: 68, y: 332, r: 28,</p>
+<p class="p1"><span class="Apple-converted-space">          </span>orig: `&lt;g&gt;&lt;circle cx="68" cy="326" r="13" fill="#FB923C"/&gt;&lt;circle cx="60" cy="314" r="5" fill="#FB923C"/&gt;&lt;circle cx="76" cy="314" r="5" fill="#FB923C"/&gt;&lt;circle cx="64" cy="324" r="2" fill="#000"/&gt;&lt;circle cx="72" cy="324" r="2" fill="#000"/&gt;&lt;/g&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">          </span>alt: `&lt;g&gt;&lt;circle cx="68" cy="326" r="13" fill="#FFFFFF" stroke="#64748B" stroke-width="2"/&gt;&lt;ellipse cx="62" cy="308" rx="4" ry="10" fill="#FFFFFF" stroke="#64748B" stroke-width="2"/&gt;&lt;ellipse cx="74" cy="308" rx="4" ry="10" fill="#FFFFFF" stroke="#64748B" stroke-width="2"/&gt;&lt;circle cx="64" cy="324" r="2" fill="#000"/&gt;&lt;circle cx="72" cy="324" r="2" fill="#000"/&gt;&lt;/g&gt;`</p>
+<p class="p1"><span class="Apple-converted-space">        </span>},</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{</p>
+<p class="p1"><span class="Apple-converted-space">          </span>id: 4, x: 228, y: 332, r: 28,</p>
+<p class="p1"><span class="Apple-converted-space">          </span>orig: `&lt;g&gt;&lt;line x1="228" y1="352" x2="228" y2="324" stroke="#15803D" stroke-width="4"/&gt;&lt;circle cx="228" cy="318" r="12" fill="#EF4444"/&gt;&lt;circle cx="228" cy="318" r="5" fill="#FACC15"/&gt;&lt;/g&gt;`,</p>
+<p class="p1"><span class="Apple-converted-space">          </span>alt: `&lt;g&gt;&lt;line x1="228" y1="352" x2="228" y2="324" stroke="#15803D" stroke-width="4"/&gt;&lt;circle cx="228" cy="318" r="12" fill="#3B82F6"/&gt;&lt;circle cx="228" cy="318" r="5" fill="#FACC15"/&gt;&lt;/g&gt;`</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>return { title: cfg.title, baseSvg, diffs };</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const spotState = {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>orderQueue: [],</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cursor: 0,</p>
+<p class="p1"><span class="Apple-converted-space">      </span>currentScene: null,</p>
+<p class="p1"><span class="Apple-converted-space">      </span>foundIds: new Set(),</p>
+<p class="p1"><span class="Apple-converted-space">      </span>foundByTeam: {}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function refillSpotQueue() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const indices = Array.from({ length: SPOT_STAGE_CONFIGS.length }, (_, i) =&gt; i);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>spotState.orderQueue = shuffle(indices);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>spotState.cursor = 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function initSpotGame() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (spotState.orderQueue.length === 0 || spotState.cursor &gt;= spotState.orderQueue.length) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>refillSpotQueue();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>loadNextSpotScene();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function loadNextSpotScene() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (spotState.cursor &gt;= spotState.orderQueue.length) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>refillSpotQueue();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const nextIdx = spotState.orderQueue[spotState.cursor++];</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const scene = buildRichScene(nextIdx);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>spotState.currentScene = scene;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>spotState.foundIds = new Set();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>spotState.foundByTeam = {};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('spot-theme-title').textContent = scene.title;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>updateSpotProgress();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>renderSpotBoard('spot-board-center', scene, false, null);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>renderSpotBoard('spot-board-t1', scene, true, 't1');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>renderSpotBoard('spot-board-t2', scene, true, 't2');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function updateSpotProgress() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const count = spotState.foundIds.size;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('spot-found-text').textContent = `${count}/5`;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const dotsWrap = document.getElementById('spot-dots');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>dotsWrap.innerHTML = '';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>for (let i = 0; i &lt; 5; i++) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const dot = document.createElement('span');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>dot.className = i &lt; count</p>
+<p class="p1"><span class="Apple-converted-space">          </span>? 'w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-emerald-500 border-2 border-emerald-700 inline-block animate-pop'</p>
+<p class="p1"><span class="Apple-converted-space">          </span>: 'w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-slate-200 border-2 border-slate-300 inline-block';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>dotsWrap.appendChild(dot);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function renderSpotBoard(containerId, scene, isModified, teamKey) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const wrap = document.getElementById(containerId);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const diffsSvg = scene.diffs.map((d) =&gt; isModified ? d.alt : d.orig).join('');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const foundCirclesSvg = isModified</p>
+<p class="p1"><span class="Apple-converted-space">        </span>? Array.from(spotState.foundIds).map((fid) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const d = scene.diffs.find((item) =&gt; item.id === fid);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const finder = spotState.foundByTeam[fid];</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const ringColor = finder === 't1' ? '#2563EB' : '#E11D48';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>return `</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;g class="animate-pop"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;circle cx="${d.x}" cy="${d.y}" r="${d.r}" fill="none" stroke="#FFFFFF" stroke-width="8" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;circle cx="${d.x}" cy="${d.y}" r="${d.r}" fill="none" stroke="${ringColor}" stroke-width="5" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/g&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>}).join('')</p>
+<p class="p1"><span class="Apple-converted-space">        </span>: '';</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>wrap.innerHTML = `</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid meet" class="w-full h-full block"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>${scene.baseSvg}</p>
+<p class="p1"><span class="Apple-converted-space">          </span>${diffsSvg}</p>
+<p class="p1"><span class="Apple-converted-space">          </span>${foundCirclesSvg}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>`;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (!isModified) return;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const svgEl = wrap.querySelector('svg');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>svgEl.addEventListener('pointerdown', (e) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>e.preventDefault();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (!appState.isRunning || appState.isManualPaused) return;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>const pt = svgEl.createSVGPoint();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>pt.x = e.clientX;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>pt.y = e.clientY;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const ctm = svgEl.getScreenCTM();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (!ctm) return;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const svgPt = pt.matrixTransform(ctm.inverse());</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>let matchedDiff = null;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>for (const d of scene.diffs) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>if (spotState.foundIds.has(d.id)) continue;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>const dist = Math.hypot(svgPt.x - d.x, svgPt.y - d.y);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>if (dist &lt;= d.r + 14) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>matchedDiff = d;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>break;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (matchedDiff) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>spotState.foundIds.add(matchedDiff.id);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>spotState.foundByTeam[matchedDiff.id] = teamKey;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>addTeamScore(teamKey, 10);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>updateSpotProgress();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>renderSpotBoard('spot-board-t1', scene, true, 't1');</p>
+<p class="p1"><span class="Apple-converted-space">          </span>renderSpotBoard('spot-board-t2', scene, true, 't2');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>if (spotState.foundIds.size &gt;= 5) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">              </span>if (appState.isRunning &amp;&amp; appState.currentGame === 'spot') {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>loadNextSpotScene();</p>
+<p class="p1"><span class="Apple-converted-space">              </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}, 900);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>wrap.classList.remove('animate-shake');</p>
+<p class="p1"><span class="Apple-converted-space">          </span>void wrap.offsetWidth;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>wrap.classList.add('animate-shake');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// =========================================================================</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// [게임 2] 다음 그림 맞히기</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// - 1팀과 2팀 완전 독립 진행 (한 팀이 맞혀도 다른 팀 문제 안 바뀜)</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// - 상단 규칙 구조 힌트 태그 제거</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// - 각 팀 보기 옆에 '⏭ 패스' 버튼 배치</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// =========================================================================</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const PATTERN_ITEMS = [</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ id: 'stone', emoji: '🪨', name: '돌맹이' },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ id: 'wave', emoji: '🌊', name: '파도' },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ id: 'shell', emoji: '🐚', name: '조개' },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ id: 'star', emoji: '⭐', name: '별' },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ id: 'apple', emoji: '🍎', name: '사과' },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ id: 'banana', emoji: '🍌', name: '바나나' },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ id: 'grape', emoji: '🍇', name: '포도' },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ id: 'tree', emoji: '🌲', name: '나무' },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ id: 'flower', emoji: '🌻', name: '해바라기' },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ id: 'cloud', emoji: '☁️', name: '구름' },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ id: 'heart', emoji: '💖', name: '하트' },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ id: 'chick', emoji: '🐥', name: '병아리' }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const PATTERN_STRUCTURES = [</p>
+<p class="p1"><span class="Apple-converted-space">      </span>'ABABAB', <span class="Apple-converted-space">  </span>// AB AB A □</p>
+<p class="p1"><span class="Apple-converted-space">      </span>'AABAABA',<span class="Apple-converted-space">  </span>// AAB AAB □</p>
+<p class="p1"><span class="Apple-converted-space">      </span>'ABBABBA',<span class="Apple-converted-space">  </span>// ABB ABB □</p>
+<p class="p1"><span class="Apple-converted-space">      </span>'ABCABCA' <span class="Apple-converted-space">  </span>// ABC ABC □</p>
+<p class="p1"><span class="Apple-converted-space">    </span>];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const patternState = {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>t1: { sequence: [], answer: null, choices: [], locked: false, lastSig: '' },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>t2: { sequence: [], answer: null, choices: [], locked: false, lastSig: '' }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function initPatternGame() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>generateRandomPatternForTeam('t1', true);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>generateRandomPatternForTeam('t2', false);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function generateRandomPatternForTeam(teamKey, preferStoneWave = false) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const team = patternState[teamKey];</p>
+<p class="p1"><span class="Apple-converted-space">      </span>let tries = 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>while (tries &lt; 20) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>tries++;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const code = preferStoneWave &amp;&amp; team.lastSig === ''</p>
+<p class="p1"><span class="Apple-converted-space">          </span>? 'ABABAB'</p>
+<p class="p1"><span class="Apple-converted-space">          </span>: PATTERN_STRUCTURES[randInt(0, PATTERN_STRUCTURES.length - 1)];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>let fourItems;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (preferStoneWave &amp;&amp; team.lastSig === '') {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>const extras = shuffle(PATTERN_ITEMS.slice(2)).slice(0, 2);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>fourItems = [PATTERN_ITEMS[0], PATTERN_ITEMS[1], extras[0], extras[1]];</p>
+<p class="p1"><span class="Apple-converted-space">        </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>fourItems = shuffle(PATTERN_ITEMS).slice(0, 4);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>const map = { A: fourItems[0], B: fourItems[1], C: fourItems[2] };</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const fullSeq = code.split('').map((ch) =&gt; map[ch]);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const visibleSeq = fullSeq.slice(0, fullSeq.length - 1);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const answerItem = fullSeq[fullSeq.length - 1];</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const sig = visibleSeq.map((i) =&gt; i.id).join(',');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (sig !== team.lastSig) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>team.lastSig = sig;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>team.sequence = visibleSeq;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>team.answer = answerItem;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>team.choices = shuffle(fourItems);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>team.locked = false;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>document.getElementById(`pat-msg-${teamKey}`).textContent = '빈칸(□)에 알맞은 그림을 아래에서 고르세요!';</p>
+<p class="p1"><span class="Apple-converted-space">          </span>renderPatternTeam(teamKey);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function renderPatternTeam(teamKey) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const data = patternState[teamKey];</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const seqWrap = document.getElementById(`pat-seq-${teamKey}`);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const isBlue = teamKey === 't1';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const totalLen = data.sequence.length + 1;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const cardMaxW = totalLen &gt;= 7 ? 'max-w-[74px]' : 'max-w-[86px]';</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const cardsHtml = data.sequence.map((item) =&gt; `</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="flex-1 ${cardMaxW} aspect-square rounded-2xl bg-white border-4 ${isBlue ? 'border-blue-200' : 'border-rose-200'} flex flex-col items-center justify-center shadow-md animate-pop"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="text-2xl sm:text-4xl leading-none"&gt;${item.emoji}&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="text-[11px] sm:text-xs text-slate-600 mt-1"&gt;${item.name}&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>`).join('');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const blankHtml = `</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="flex-1 ${cardMaxW} aspect-square rounded-2xl ${isBlue ? 'bg-blue-100 border-blue-500 text-blue-600' : 'bg-rose-100 border-rose-500 text-rose-600'} border-4 border-dashed flex flex-col items-center justify-center shadow-inner animate-pop"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="text-2xl sm:text-4xl font-black"&gt;□&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="text-[11px] sm:text-xs font-bold mt-0.5"&gt;다음은?&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>`;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>seqWrap.innerHTML = cardsHtml + blankHtml;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const choicesWrap = document.getElementById(`pat-choices-${teamKey}`);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>choicesWrap.innerHTML = '';</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>data.choices.forEach((choice) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const btn = document.createElement('button');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>btn.type = 'button';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>btn.className = `touch-btn py-3 sm:py-4 px-1 rounded-2xl border-b-4 ${</p>
+<p class="p1"><span class="Apple-converted-space">          </span>isBlue</p>
+<p class="p1"><span class="Apple-converted-space">            </span>? 'bg-blue-50 hover:bg-blue-100 border-blue-300 text-blue-950'</p>
+<p class="p1"><span class="Apple-converted-space">            </span>: 'bg-rose-50 hover:bg-rose-100 border-rose-300 text-rose-950'</p>
+<p class="p1"><span class="Apple-converted-space">        </span>} flex flex-col items-center justify-center shadow cursor-pointer`;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>btn.innerHTML = `</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="text-3xl sm:text-5xl mb-1"&gt;${choice.emoji}&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="text-xs sm:text-base font-bold"&gt;${choice.name}&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>`;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>btn.addEventListener('pointerdown', (e) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>e.preventDefault();</p>
+<p class="p1"><span class="Apple-converted-space">          </span>if (!appState.isRunning || appState.isManualPaused || data.locked) return;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>if (choice.id === data.answer.id) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>data.locked = true;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>addTeamScore(teamKey, 10);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById(`pat-msg-${teamKey}`).textContent = `⭕ 정답! [${choice.name}]이에요! +10점!`;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const blankEl = seqWrap.lastElementChild;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (blankEl) {</p>
+<p class="p1"><span class="Apple-converted-space">              </span>blankEl.className = `flex-1 ${cardMaxW} aspect-square rounded-2xl bg-emerald-100 border-4 border-emerald-500 flex flex-col items-center justify-center shadow-md animate-pop`;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>blankEl.innerHTML = `</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="text-2xl sm:text-4xl leading-none"&gt;${choice.emoji}&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="text-[11px] sm:text-xs text-emerald-800 font-bold mt-1"&gt;${choice.name}&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">              </span>if (appState.isRunning &amp;&amp; appState.currentGame === 'pattern') {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>generateRandomPatternForTeam(teamKey, false);</p>
+<p class="p1"><span class="Apple-converted-space">              </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}, 650);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>btn.classList.remove('animate-shake');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>void btn.offsetWidth;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>btn.classList.add('animate-shake', 'bg-red-100', 'border-red-400');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById(`pat-msg-${teamKey}`).textContent = '❌ 아쉬워요! 두 번 반복된 규칙을 다시 보세요!';</p>
+<p class="p1"><span class="Apple-converted-space">          </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>choicesWrap.appendChild(btn);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// =========================================================================</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// [게임 3] 몇 시 몇 분? (N시 / N시 30분 전용)</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// =========================================================================</p>
+<p class="p1"><span class="Apple-converted-space">    </span>function initClockGame() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>clockState.lastKey = '';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>nextClockProblem();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function formatClockKorean(h, m) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>return m === 0 ? `${h}시` : `${h}시 30분`;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function createAnalogClockSvg(hour, minute) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const minuteAngle = minute * 6;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const hourAngle = ((hour % 12) + minute / 60) * 30;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>let ticksHtml = '';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>for (let i = 0; i &lt; 60; i++) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const angle = i * 6;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const isHourMark = i % 5 === 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const y1 = isHourMark ? 14 : 16;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const y2 = isHourMark ? 25 : 21;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const strokeW = isHourMark ? 3.2 : 1.3;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const color = isHourMark ? '#1E293B' : '#94A3B8';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>ticksHtml += `&lt;line x1="100" y1="${y1}" x2="100" y2="${y2}" stroke="${color}" stroke-width="${strokeW}" stroke-linecap="round" transform="rotate(${angle} 100 100)"/&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>let numsHtml = '';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>for (let n = 1; n &lt;= 12; n++) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const rad = ((n * 30 - 90) * Math.PI) / 180;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const x = 100 + 62 * Math.cos(rad);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const y = 100 + 62 * Math.sin(rad);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>numsHtml += `&lt;text x="${x}" y="${y}" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="900" fill="#1E293B"&gt;${n}&lt;/text&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>return `</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;svg viewBox="0 0 200 200" class="w-full h-full drop-shadow-md animate-pop"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;circle cx="100" cy="100" r="92" fill="#FFFFFF" stroke="#F59E0B" stroke-width="8"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;circle cx="100" cy="100" r="86" fill="none" stroke="#FEF3C7" stroke-width="3"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>${ticksHtml}</p>
+<p class="p1"><span class="Apple-converted-space">          </span>${numsHtml}</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;line x1="100" y1="100" x2="100" y2="54" stroke="#E11D48" stroke-width="6.5" stroke-linecap="round" transform="rotate(${hourAngle} 100 100)"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;line x1="100" y1="100" x2="100" y2="30" stroke="#2563EB" stroke-width="4.5" stroke-linecap="round" transform="rotate(${minuteAngle} 100 100)"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;circle cx="100" cy="100" r="6" fill="#1E293B"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function nextClockProblem() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>clearTimeout(clockState.waitTimer);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>appState.isTimerPaused = false;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>updateTimerUI();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('clock-wait-overlay').classList.add('hidden');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>let hour = 12;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>let minute = 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>let key = '';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>let tries = 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>while (tries &lt; 20) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>tries++;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>hour = randInt(1, 12);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>minute = Math.random() &lt; 0.5 ? 0 : 30;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>key = `${hour}:${minute}`;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (key !== clockState.lastKey) break;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>clockState.lastKey = key;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>clockState.hour = hour;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>clockState.minute = minute;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>clockState.locked = false;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const correctText = formatClockKorean(hour, minute);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const distractors = new Set();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>while (distractors.size &lt; 3) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const wh = randInt(1, 12);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const wm = Math.random() &lt; 0.5 ? 0 : 30;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const candidate = formatClockKorean(wh, wm);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (candidate !== correctText) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>distractors.add(candidate);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const choices = shuffle([correctText, ...Array.from(distractors)]);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const svgMarkup = createAnalogClockSvg(hour, minute);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('clock-face-t1').innerHTML = svgMarkup;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('clock-face-t2').innerHTML = svgMarkup;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('clock-msg-t1').textContent = '알맞은 시각 버튼을 먼저 누르세요!';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('clock-msg-t2').textContent = '알맞은 시각 버튼을 먼저 누르세요!';</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>renderClockChoices('t1', choices, correctText);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>renderClockChoices('t2', choices, correctText);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function renderClockChoices(teamKey, choices, correctText) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const wrap = document.getElementById(`clock-choices-${teamKey}`);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const isBlue = teamKey === 't1';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>wrap.innerHTML = '';</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>choices.forEach((label) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const btn = document.createElement('button');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>btn.type = 'button';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>btn.className = `touch-btn py-3.5 sm:py-5 px-2 rounded-2xl border-b-4 ${</p>
+<p class="p1"><span class="Apple-converted-space">          </span>isBlue</p>
+<p class="p1"><span class="Apple-converted-space">            </span>? 'bg-blue-50 hover:bg-blue-100 border-blue-300 text-blue-950'</p>
+<p class="p1"><span class="Apple-converted-space">            </span>: 'bg-rose-50 hover:bg-rose-100 border-rose-300 text-rose-950'</p>
+<p class="p1"><span class="Apple-converted-space">        </span>} text-xl sm:text-3xl font-bold shadow cursor-pointer`;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>btn.textContent = label;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>btn.addEventListener('pointerdown', (e) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>e.preventDefault();</p>
+<p class="p1"><span class="Apple-converted-space">          </span>if (!appState.isRunning || appState.isManualPaused || clockState.locked) return;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>if (label === correctText) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>clockState.locked = true;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>appState.isTimerPaused = true;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>updateTimerUI();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>addTeamScore(teamKey, 10);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const banner = document.getElementById('clock-winner-banner');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (teamKey === 't1') {</p>
+<p class="p1"><span class="Apple-converted-space">              </span>banner.textContent = `⭕ 1팀 먼저 정답! (${correctText}) +10점!`;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>banner.className = 'bg-blue-600 text-white px-6 sm:px-8 py-4 rounded-3xl border-4 border-white shadow-2xl text-2xl sm:text-4xl mb-4 animate-pop';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">              </span>banner.textContent = `⭕ 2팀 먼저 정답! (${correctText}) +10점!`;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>banner.className = 'bg-rose-600 text-white px-6 sm:px-8 py-4 rounded-3xl border-4 border-white shadow-2xl text-2xl sm:text-4xl mb-4 animate-pop';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const overlay = document.getElementById('clock-wait-overlay');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const numEl = document.getElementById('clock-countdown-num');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overlay.classList.remove('hidden');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>numEl.textContent = '2';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>clockState.waitTimer = setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">              </span>if (!appState.isRunning) return;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>numEl.textContent = '1';</p>
+<p class="p1"><span class="Apple-converted-space">              </span>clockState.waitTimer = setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (!appState.isRunning) return;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>numEl.textContent = '시작!';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>clockState.waitTimer = setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>if (appState.isRunning &amp;&amp; appState.currentGame === 'clock') {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>nextClockProblem();</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}, 450);</p>
+<p class="p1"><span class="Apple-converted-space">              </span>}, 850);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}, 850);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>btn.classList.remove('animate-shake');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>void btn.offsetWidth;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>btn.classList.add('animate-shake', 'bg-red-100', 'border-red-400', 'text-red-800');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById(`clock-msg-${teamKey}`).textContent = '❌ 짧은바늘과 긴바늘을 다시 보세요!';</p>
+<p class="p1"><span class="Apple-converted-space">          </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>wrap.appendChild(btn);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// =========================================================================</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// 이벤트 초기화</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// =========================================================================</p>
+<p class="p1"><span class="Apple-converted-space">    </span>window.addEventListener('DOMContentLoaded', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.querySelectorAll('.game-tab-btn').forEach((btn) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>btn.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>appState.currentGame = btn.dataset.game;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>startMatch();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.querySelectorAll('.modal-game-btn').forEach((btn) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>btn.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>switchStageView(btn.dataset.game);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.querySelectorAll('.modal-time-btn').forEach((btn) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>btn.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>appState.durationSec = Number(btn.dataset.sec);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>document.querySelectorAll('.modal-time-btn').forEach((b) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>b.className = 'modal-time-btn py-2.5 rounded-xl border-2 border-slate-300 bg-white text-slate-700 text-lg sm:text-xl cursor-pointer';</p>
+<p class="p1"><span class="Apple-converted-space">          </span>});</p>
+<p class="p1"><span class="Apple-converted-space">          </span>btn.className = 'modal-time-btn py-2.5 rounded-xl border-4 border-blue-500 bg-blue-100 text-blue-950 text-lg sm:text-xl font-bold cursor-pointer';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('spot-skip-btn').addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (!appState.isRunning || appState.isManualPaused) return;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>loadNextSpotScene();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('pat-pass-t1').addEventListener('pointerdown', (e) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>e.preventDefault();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (!appState.isRunning || appState.isManualPaused || patternState.t1.locked) return;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>generateRandomPatternForTeam('t1', false);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('pat-pass-t2').addEventListener('pointerdown', (e) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>e.preventDefault();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (!appState.isRunning || appState.isManualPaused || patternState.t2.locked) return;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>generateRandomPatternForTeam('t2', false);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('pause-btn').addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (!appState.isRunning) return;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>appState.isManualPaused = true;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>updateTimerUI();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById('pause-overlay').classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('resume-btn').addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>appState.isManualPaused = false;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>updateTimerUI();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById('pause-overlay').classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('start-match-btn').addEventListener('click', startMatch);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('replay-same-btn').addEventListener('click', startMatch);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('choose-other-btn').addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById('result-overlay').classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById('setup-overlay').classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('open-setup-btn').addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>clearInterval(appState.timerId);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>clearTimeout(clockState.waitTimer);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>appState.isRunning = false;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>appState.isManualPaused = false;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>appState.isTimerPaused = false;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById('pause-overlay').classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById('clock-wait-overlay').classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById('setup-overlay').classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>initSpotGame();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
